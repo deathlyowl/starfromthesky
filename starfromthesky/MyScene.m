@@ -44,8 +44,6 @@
         dog.position = CGPointMake(0,144);
 
         [self addChild:dog];
-        
-        NSLog(@"%@", self.children);
     }
     return self;
 }

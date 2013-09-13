@@ -17,13 +17,13 @@
 		FA135B5917E2FFEE00DAB16A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA135B5717E2FFEE00DAB16A /* Main.storyboard */; };
 		FA135B5C17E2FFEE00DAB16A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA135B5B17E2FFEE00DAB16A /* ViewController.m */; };
 		FA135B5F17E2FFEE00DAB16A /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA135B5E17E2FFEE00DAB16A /* MyScene.m */; };
-		FA135B6117E2FFEE00DAB16A /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = FA135B6017E2FFEE00DAB16A /* Spaceship.png */; };
 		FA135B6317E2FFEE00DAB16A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA135B6217E2FFEE00DAB16A /* Images.xcassets */; };
 		FA135B6A17E2FFEE00DAB16A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA135B6917E2FFEE00DAB16A /* XCTest.framework */; };
 		FA135B6B17E2FFEE00DAB16A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA135B4317E2FFEE00DAB16A /* Foundation.framework */; };
 		FA135B6C17E2FFEE00DAB16A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA135B4717E2FFEE00DAB16A /* UIKit.framework */; };
 		FA135B7417E2FFEE00DAB16A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA135B7217E2FFEE00DAB16A /* InfoPlist.strings */; };
 		FA135B7617E2FFEE00DAB16A /* starfromtheskyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA135B7517E2FFEE00DAB16A /* starfromtheskyTests.m */; };
+		FACDE5F517E3774B00F95F70 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACDE5F417E3774B00F95F70 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +53,13 @@
 		FA135B5B17E2FFEE00DAB16A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FA135B5D17E2FFEE00DAB16A /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		FA135B5E17E2FFEE00DAB16A /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		FA135B6017E2FFEE00DAB16A /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		FA135B6217E2FFEE00DAB16A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA135B6817E2FFEE00DAB16A /* starfromtheskyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = starfromtheskyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA135B6917E2FFEE00DAB16A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FA135B7117E2FFEE00DAB16A /* starfromtheskyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "starfromtheskyTests-Info.plist"; sourceTree = "<group>"; };
 		FA135B7317E2FFEE00DAB16A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA135B7517E2FFEE00DAB16A /* starfromtheskyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = starfromtheskyTests.m; sourceTree = "<group>"; };
+		FACDE5F417E3774B00F95F70 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +71,7 @@
 				FA135B4817E2FFEE00DAB16A /* UIKit.framework in Frameworks */,
 				FA135B4A17E2FFEE00DAB16A /* SpriteKit.framework in Frameworks */,
 				FA135B4417E2FFEE00DAB16A /* Foundation.framework in Frameworks */,
+				FACDE5F517E3774B00F95F70 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +110,7 @@
 		FA135B4217E2FFEE00DAB16A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FACDE5F417E3774B00F95F70 /* GameKit.framework */,
 				FA135B4317E2FFEE00DAB16A /* Foundation.framework */,
 				FA135B4517E2FFEE00DAB16A /* CoreGraphics.framework */,
 				FA135B4717E2FFEE00DAB16A /* UIKit.framework */,
@@ -128,7 +130,6 @@
 				FA135B5B17E2FFEE00DAB16A /* ViewController.m */,
 				FA135B5D17E2FFEE00DAB16A /* MyScene.h */,
 				FA135B5E17E2FFEE00DAB16A /* MyScene.m */,
-				FA135B6017E2FFEE00DAB16A /* Spaceship.png */,
 				FA135B6217E2FFEE00DAB16A /* Images.xcassets */,
 				FA135B4C17E2FFEE00DAB16A /* Supporting Files */,
 			);
@@ -211,6 +212,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Deathly Owl";
 				TargetAttributes = {
+					FA135B3F17E2FFEE00DAB16A = {
+						DevelopmentTeam = 377SA7CLTK;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
+					};
 					FA135B6717E2FFEE00DAB16A = {
 						TestTargetID = FA135B3F17E2FFEE00DAB16A;
 					};
@@ -242,7 +251,6 @@
 			files = (
 				FA135B5017E2FFEE00DAB16A /* InfoPlist.strings in Resources */,
 				FA135B6317E2FFEE00DAB16A /* Images.xcassets in Resources */,
-				FA135B6117E2FFEE00DAB16A /* Spaceship.png in Resources */,
 				FA135B5917E2FFEE00DAB16A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,10 +400,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "starfromthesky/starfromthesky-Prefix.pch";
 				INFOPLIST_FILE = "starfromthesky/starfromthesky-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,10 +417,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "starfromthesky/starfromthesky-Prefix.pch";
 				INFOPLIST_FILE = "starfromthesky/starfromthesky-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};

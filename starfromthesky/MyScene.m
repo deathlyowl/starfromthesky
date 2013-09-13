@@ -28,14 +28,24 @@
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        self.backgroundColor = [SKColor whiteColor];
+        self.backgroundColor = [SKColor colorWithWhite:.9 alpha:1];
 
+        SKLabelNode *textNode = [SKLabelNode labelNodeWithFontNamed:@"HydrophiliaIced"];
+        
+        [textNode setFontSize:11];
+        [textNode setText:@"Hello, world!"];
+        [textNode setFontColor:[SKColor blackColor]];
+        [textNode setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        
+        [self addChild:textNode];
+        
         [self makeDog];
 
         dog.position = CGPointMake(0,144);
 
-        NSLog(@"%@", dog);
         [self addChild:dog];
+        
+        NSLog(@"%@", self.children);
     }
     return self;
 }
@@ -49,7 +59,6 @@
     [dog runAction:[SKAction repeatActionForever:walkingDog]];
     [dog runAction:[SKAction moveTo:location duration:2]
         completion:^(){
-            NSLog(@"%@", dog);
             [dog removeAllActions];
         }];
 }

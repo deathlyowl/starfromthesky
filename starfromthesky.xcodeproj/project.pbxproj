@@ -476,6 +476,7 @@
 				FA135B7B17E2FFEE00DAB16A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA135B7C17E2FFEE00DAB16A /* Build configuration list for PBXNativeTarget "starfromtheskyTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +485,7 @@
 				FA135B7E17E2FFEE00DAB16A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

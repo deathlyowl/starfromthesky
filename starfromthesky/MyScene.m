@@ -12,6 +12,7 @@
     SKSpriteNode *dog;
     SKAction *walkingDog;
     SKAction *standingDog;
+    SKLabelNode *textNode;
 }
 
 - (void) makeDog {
@@ -29,10 +30,12 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         self.backgroundColor = [SKColor colorWithWhite:.9 alpha:1];
-
-        SKLabelNode *textNode = [SKLabelNode labelNodeWithFontNamed:@"HydrophiliaIced"];
         
-        [textNode setFontSize:11];
+        [self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:self.size]];
+
+        textNode = [SKLabelNode labelNodeWithFontNamed:@"HydrophiliaIced"];
+        
+        [textNode setFontSize:33];
         [textNode setText:@"Hello, world!"];
         [textNode setFontColor:[SKColor blackColor]];
         [textNode setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
@@ -64,6 +67,8 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     CGPoint location = [[touches anyObject] locationInNode:self];
     [self moveDogToLocation:CGPointMake(location.x, 144)];
+    
+    [textNode setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:textNode.frame.size]];
 }
 
 -(void)update:(CFTimeInterval)currentTime {

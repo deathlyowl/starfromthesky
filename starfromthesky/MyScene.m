@@ -10,9 +10,26 @@
 
 @implementation MyScene {
     SKSpriteNode *dog;
+    SKSpriteNode *protagonist;
+    
+    SKAction *walkingProtagonist;
+    
     SKAction *walkingDog;
-    SKAction *standingDog;
-    SKLabelNode *textNode;
+}
+
+- (void) makeProtagonist{
+    SKTexture *protagonistTexture = [SKTexture textureWithImageNamed:@"man"];
+    SKTexture *protagonistSideTexture = [SKTexture textureWithImageNamed:@"man_side"];
+    SKTexture *protagonistSwitchTexture = [SKTexture textureWithImageNamed:@"man_switch"];
+    SKTexture *protagonistWalk1Texture = [SKTexture textureWithImageNamed:@"man_walk2"];
+    SKTexture *protagonistWalk2Texture = [SKTexture textureWithImageNamed:@"man_walk1"];
+    
+    walkingProtagonist = [SKAction animateWithTextures:@[protagonistSideTexture,protagonistWalk1Texture,protagonistWalk2Texture,protagonistSwitchTexture]
+                                          timePerFrame:.1
+                                                resize:NO
+                                               restore:YES];
+    
+    protagonist = [SKSpriteNode spriteNodeWithTexture:protagonistTexture];
 }
 
 - (void) makeDog {
@@ -21,7 +38,9 @@
     SKTexture *dogWalk2Texture = [SKTexture textureWithImageNamed:@"dog_walk2"];
     
     walkingDog = [SKAction animateWithTextures:@[dogTexture,dogWalk1Texture,dogWalk2Texture]
-                                  timePerFrame:.1 resize:NO restore:YES];
+                                  timePerFrame:.1
+                                        resize:NO
+                                       restore:YES];
     
     dog = [SKSpriteNode spriteNodeWithTexture:dogTexture];
 }
@@ -31,24 +50,34 @@
         /* Setup your scene here */
         self.backgroundColor = [SKColor colorWithWhite:.9 alpha:1];
         
-        [self setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:self.size]];
-
-        textNode = [SKLabelNode labelNodeWithFontNamed:@"HydrophiliaIced"];
-        
-        [textNode setFontSize:33];
-        [textNode setText:@"Hello, world!"];
-        [textNode setFontColor:[SKColor blackColor]];
-        [textNode setPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
-        
-        [self addChild:textNode];
-        
         [self makeDog];
+        [self makeProtagonist];
+        
+        protagonist.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
 
-        dog.position = CGPointMake(0,144);
-
+        dog.position = CGPointMake(40,144);
+        
         [self addChild:dog];
+        [self addChild:protagonist];
     }
     return self;
+}
+
+- (void) moveProtagonistToLocation:(CGPoint) location{
+    [protagonist removeAllActions];
+    
+    if (location.x > protagonist.position.x) [protagonist setXScale:1];
+    else [protagonist setXScale:-1];
+    if (abs(protagonist.position.x - dog.position.x) > 40) {
+        NSLog(@"!!!");
+        [self moveDogToLocation:protagonist.position];
+    }
+    [protagonist runAction:[SKAction repeatActionForever:walkingProtagonist]];
+    [protagonist runAction:[SKAction moveTo:location duration:2]
+                completion:^(){
+                    [protagonist removeAllActions];
+                    
+                }];
 }
 
 - (void) moveDogToLocation:(CGPoint) location{
@@ -66,13 +95,12 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     CGPoint location = [[touches anyObject] locationInNode:self];
-    [self moveDogToLocation:CGPointMake(location.x, 144)];
-    
-    [textNode setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize:textNode.frame.size]];
+    [self moveProtagonistToLocation:location];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+   
 }
 
 @end
